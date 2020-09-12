@@ -5,3 +5,6 @@ def home(request):
 
 	return render(request, "voluntariado/home.html")
 
+def solicitud(request):
+
+	return render(request, "voluntariado/solicitante.html")

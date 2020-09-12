@@ -5,5 +5,6 @@ from voluntariado import views
 
 urlpatterns = [
       path('', views.home, name="Home"),
-      path('home/', views.home, name="Home")
+      path('home/', views.home, name="Home"),
+      path('solicitante/', views.solicitud, name ="solicitante")
 ]
