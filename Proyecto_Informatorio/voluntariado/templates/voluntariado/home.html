@@ -9,14 +9,19 @@
    <section class="page-section clearfix">
     <div class="container">
       <div class="intro">
-        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'voluntariado/img/principal.jpg' %}" alt="">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" id=empleado src="{% static 'voluntariado/img/voluntariodelmes.jpg' %}" alt="">
         <div class="intro-text left-0 text-center bg-faded p-5 rounded">
           <h2 class="section-heading mb-4" >
-            <span class="section-heading-upper">palabra 1</span>
-            <span class="section-heading-lower">palabra 2</span>
+
+            <span class="section-heading-upper">Voluntario del Mes</span>
+            <span class="section-heading-lower">Fulanito</span>
+
           </h2>
-          <p class="mb-3">Un favor por otro favor, hace al mundo un lugar mejor (?.
-          </p>
+          <p class="mb-3">Un favor por otro favor, hace al mundo un lugar mejor (?.</p>
+          <p>Voluntarios: {{ num_voluntarios}}</p>
+          <p>Favores: {{ num_favores }}</p>
+          <p>Aún debemos realizar: {{ num_faltantes }} favores, necesitamos tu ayuda</p>
+          <p><a href="registrar_voluntario">Ingresa aquí</a></p>
          
         </div>
       </div>

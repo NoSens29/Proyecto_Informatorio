@@ -11,8 +11,8 @@ class Persona(models.Model):
 	mail = models.EmailField()
 	direccion = models.CharField(max_length=100)
 	administrador = models.BooleanField()
-	voluntario = models.BooleanField()
-	solicitante = models.BooleanField()
+	voluntario = models.BooleanField(null=True, blank=True)
+	solicitante = models.BooleanField(null=True, blank=True)
 
 	def __str__(self):
 		return (self.nombre + ', '+self.apellido)
