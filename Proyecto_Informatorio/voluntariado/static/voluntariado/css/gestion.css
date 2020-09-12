@@ -1,6 +1,6 @@
 body {
   font-family: 'Lora';
-  background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../img/bg_main.jpg");
+  background: linear-gradient(rgb(20 227 184 / 30%), rgb(62 38 116 / 65%)), url("../img/bg_main.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -80,7 +80,7 @@ p {
 }
 
 #mainNav {
-  background-color: rgba(24, 64, 8);
+  background-color: rgba(244, 77, 77, 0.9);
   font-family: 'Raleway';
 }
 
@@ -134,8 +134,8 @@ p {
     left: 600;
     width: 60%;
     margin-top: 3rem;
-    background-color: rgba(24, 64, 8);
-    color: cornsilk;
+    background-color: rgba(246, 171, 108);
+    color: rgba(255,255,255,255);
     position: absolute;
   }
   .intro .intro-text .intro-button {
@@ -155,14 +155,13 @@ p {
 .cta {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: rgb(242, 245, 240);
 }
 
 .cta .cta-inner {
   position: relative;
   padding: 3rem;
   margin: 0.5rem;
-  background-color: rgba(24, 64, 8);
+  background-color: rgba(246, 171, 108,1);
   color: cornsilk;
 }
 
@@ -229,7 +228,7 @@ p {
 }
 
 .footer {
-   background-color: rgba(24, 64, 8, 0.8);
+   background-color: rgb(235, 88, 89);
 }
 
 
@@ -276,4 +275,26 @@ ul.errorlist{
   padding-top: .75rem;
   font-style: italic;
   color: red;
+}
+
+.container{
+  padding: 1em;
+  overflow: hidden;
+}
+
+.item{
+  margin: 1em;
+  padding: 1em;
+}
+#item1{
+  float: left;
+}
+
+#item2{
+  float:right;
+}
+
+#empleado{
+  width:30em;
+  height:40em;
 }
