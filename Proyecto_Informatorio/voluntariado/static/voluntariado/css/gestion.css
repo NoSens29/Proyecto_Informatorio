@@ -289,6 +289,9 @@ ul.errorlist{
 }
 #item1{
   float: left;
+  width:20em;
+  height:20em;
+  border-radius: 100px;
 }
 
 #item2{
