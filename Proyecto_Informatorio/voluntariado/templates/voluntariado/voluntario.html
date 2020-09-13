@@ -1,3 +1,9 @@
+{% extends "voluntariado/base.html" %}
+
+{% load static %}
+
+
+{% block content %}
 
 <form method="POST">
 	{% csrf_token %}
@@ -13,3 +19,4 @@
 	<input type="hidden" name="solicitant" value="False"><br>
 	<button type="submitt">Registrarse</button>
 </form>
+{% endblock %}
