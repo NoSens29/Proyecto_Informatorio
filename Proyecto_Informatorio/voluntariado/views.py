@@ -16,5 +16,14 @@ def registrar_voluntario(request):
 		nuevo_registro = Persona(dni=POST['dni'], nombre=POST['name'],
 			apellido=POST['surname'], telefono=POST['phone'], mail=POST['email'], direccion=POST['adress'], voluntario=POST['voluntary'], administrador=POST['admin'], solicitante=POST['solicitant']) 
 		nuevo_registro.save()
-
+		
 	return render(request, 'voluntariado/voluntario.html')
+
+def registrar_solicitante(request):
+	if request.POST:
+		POST = request.POST
+		nuevo_registro = Persona(dni=POST['dni'], nombre=POST['name'],
+			apellido=POST['surname'], telefono=POST['phone'], mail=POST['email'], direccion=POST['adress'], voluntario=POST['voluntary'], administrador=POST['admin'], solicitante=POST['solicitant']) 
+		nuevo_registro.save()
+
+	return render(request, 'voluntariado/solicitante.html')
