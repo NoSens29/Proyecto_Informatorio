@@ -285,13 +285,18 @@ ul.errorlist{
 .item{
   margin: 1em;
   padding: 1em;
+
 }
 #item1{
   float: left;
+  width:20em;
+  height:20em;
+  border-radius: 100px;
 }
 
 #item2{
-  float:right;
+  float:left;
+  width:30em;
 }
 
 #empleado{
