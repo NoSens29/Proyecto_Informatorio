@@ -1,0 +1,22 @@
+{% extends "voluntariado/base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+
+<form method="POST">
+	{% csrf_token %}
+	<label>Nombre</label><input type="" name="name"><br>
+	<label>Apellido</label><input type="" name="surname"><br>
+	<label>DNI</label><input type="" name="dni"><br>
+	<label>Teléfono</label><input type="" name="phone"><br>
+	<label>Mail</label><input type="" name="email"><br>
+	<label>Dirección</label><input type="" name="adress"><br>
+	<label>Contraseña</label><input type="password" name="password">
+	<input type="hidden" name="admin" value="False"><br>
+	<input type="hidden" name="voluntary" value="True"><br>
+	<input type="hidden" name="solicitant" value="False"><br>
+	<button type="submitt">Registrarse</button>
+</form>
+{% endblock %}
