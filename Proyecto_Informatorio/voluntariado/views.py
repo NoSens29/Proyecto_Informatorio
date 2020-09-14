@@ -37,4 +37,11 @@ def registro(request):
 	return render(request, 'voluntariado/registro.html')
 
 def login(request):
+	if request.POST:
+		data = request.POST
+		user = data['username']
+		password = data['password']
+		persona = Persona.objects.get('username'=user)
+		if password == persona.contrasenia:
+			return render(request, 'Home')
 	return render(request, 'voluntariado/login.html')
