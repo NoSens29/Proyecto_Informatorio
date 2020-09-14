@@ -20,13 +20,10 @@ def registrar_voluntario(request):
 		
 	return render(request, 'voluntariado/voluntario.html')
 
-<<<<<<< HEAD
-	return render(request, 'voluntariado/voluntario.html')
-
 def registrar_persona(request):
 	form = PersonaForm
 	return render(request, 'voluntariado/persona_new.html', {'form': form})
-=======
+
 def registrar_solicitante(request):
 	if request.POST:
 		POST = request.POST
@@ -41,4 +38,3 @@ def registro(request):
 
 def login(request):
 	return render(request, 'voluntariado/login.html')
->>>>>>> master
