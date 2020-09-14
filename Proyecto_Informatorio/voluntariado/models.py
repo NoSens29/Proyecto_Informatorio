@@ -26,6 +26,7 @@ class Actividad(models.Model):
 	realizada = models.BooleanField()
 	id_solicitante = models.ForeignKey('Persona', on_delete = models.SET_NULL, null=True, blank=True, related_name = 'actividadesSol')
 	id_voluntario = models.ForeignKey('Persona', on_delete = models.SET_NULL, null=True, blank=True, related_name = 'actividadesVol')
+	
 
 	def __str__(self):
 		return (self.nombre + ' Fecha: '+str(self.fecha))

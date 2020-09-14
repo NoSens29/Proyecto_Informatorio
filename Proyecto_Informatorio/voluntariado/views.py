@@ -17,9 +17,28 @@ def registrar_voluntario(request):
 		nuevo_registro = Persona(dni=POST['dni'], nombre=POST['name'],
 			apellido=POST['surname'], telefono=POST['phone'], mail=POST['email'], direccion=POST['adress'], voluntario=POST['voluntary'], administrador=POST['admin'], solicitante=POST['solicitant'], contrasenia=POST['password']) 
 		nuevo_registro.save()
+		
+	return render(request, 'voluntariado/voluntario.html')
 
+<<<<<<< HEAD
 	return render(request, 'voluntariado/voluntario.html')
 
 def registrar_persona(request):
 	form = PersonaForm
 	return render(request, 'voluntariado/persona_new.html', {'form': form})
+=======
+def registrar_solicitante(request):
+	if request.POST:
+		POST = request.POST
+		nuevo_registro = Persona(dni=POST['dni'], nombre=POST['name'],
+			apellido=POST['surname'], telefono=POST['phone'], mail=POST['email'], direccion=POST['adress'], voluntario=POST['voluntary'], administrador=POST['admin'], solicitante=POST['solicitant'], contrasenia=['password']) 
+		nuevo_registro.save()
+
+	return render(request, 'voluntariado/solicitante.html')
+
+def registro(request):
+	return render(request, 'voluntariado/registro.html')
+
+def login(request):
+	return render(request, 'voluntariado/login.html')
+>>>>>>> master
