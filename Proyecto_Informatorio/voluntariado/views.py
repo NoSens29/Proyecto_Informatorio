@@ -33,3 +33,12 @@ def registro(request):
 
 def login(request):
 	return render(request, 'voluntariado/login.html')
+
+def Historiadefavores(request):
+	return render(request,'voluntariado/Historiadefavores.html')
+
+def contacto(request):
+	return render(request,'voluntariado/contacto.html')
+
+def donaciones(request):
+	return render(request,"voluntariado/donaciones.html")
