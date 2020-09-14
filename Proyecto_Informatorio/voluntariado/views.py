@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.template import loader
 from .models import Persona, Actividad
 
@@ -14,7 +14,8 @@ def registrar_voluntario(request):
 	if request.POST:
 		POST = request.POST
 		nuevo_registro = Persona(dni=POST['dni'], nombre=POST['name'],
-			apellido=POST['surname'], telefono=POST['phone'], mail=POST['email'], direccion=POST['adress'], voluntario=POST['voluntary'], administrador=POST['admin'], solicitante=POST['solicitant'], contrasenia=POST['password']) 
+			apellido=POST['surname'], telefono=POST['phone'], mail=POST['email'], direccion=POST['adress'], voluntario=POST['voluntary'], 
+			administrador=POST['admin'], solicitante=POST['solicitant'], contrasenia=POST['password'],usuario=POST['username']) 
 		nuevo_registro.save()
 		
 	return render(request, 'voluntariado/voluntario.html')
@@ -32,4 +33,14 @@ def registro(request):
 	return render(request, 'voluntariado/registro.html')
 
 def login(request):
+	if request.POST:
+		data = request.POST
+		user = data['username']
+		password = data['password']
+		try:
+			persona = Persona.objects.get(usuario=user)
+			if password == persona.contrasenia:
+				return redirect('Home')
+		except:
+			pass
 	return render(request, 'voluntariado/login.html')

@@ -14,6 +14,7 @@ class Persona(models.Model):
 	voluntario = models.BooleanField(null=True, blank=True)
 	solicitante = models.BooleanField(null=True, blank=True)
 	contrasenia = models.CharField(max_length=60, default="usuario")
+	usuario = models.CharField(max_length=20)
 
 	def __str__(self):
 		return (self.nombre + ', '+self.apellido)
