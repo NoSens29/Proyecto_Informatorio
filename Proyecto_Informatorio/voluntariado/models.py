@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 
 # Create your models here.
 
@@ -13,7 +14,7 @@ class Persona(models.Model):
 	administrador = models.BooleanField()
 	voluntario = models.BooleanField(null=True, blank=True)
 	solicitante = models.BooleanField(null=True, blank=True)
-	contrasenia = models.CharField(max_length=60, default="usuario")
+	contrasenia = models.CharField(max_length=20)
 
 	def __str__(self):
 		return (self.nombre + ', '+self.apellido)

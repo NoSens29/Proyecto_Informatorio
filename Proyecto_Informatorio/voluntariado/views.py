@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from django.template import loader
 from .models import Persona, Actividad
+from .forms import PersonaForm
 
 # Create your views here.
 def home(request):
@@ -18,3 +19,7 @@ def registrar_voluntario(request):
 		nuevo_registro.save()
 
 	return render(request, 'voluntariado/voluntario.html')
+
+def registrar_persona(request):
+	form = PersonaForm
+	return render(request, 'voluntariado/persona_new.html', {'form': form})
