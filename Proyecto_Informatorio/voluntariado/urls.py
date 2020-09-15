@@ -8,12 +8,6 @@ urlpatterns = [
 
       path('Home', views.home, name = "Home"),
  #     path('home/', views.home, name="Home"),
-<<<<<<< HEAD
-      path('login/', views.login),
-      path('registro/', views.registro),
-      path('registro/', views.registrar_voluntario, name='registrar_voluntario'),
-      path('registro/', views.registrar_solicitante, name='registrar_solicitante')
-=======
 
  	  path('login/', views.login, name ="login"),
 
@@ -31,5 +25,4 @@ urlpatterns = [
 
       
 
->>>>>>> origin
 ]

@@ -37,8 +37,6 @@ def registrar_solicitante(request):
 def registro(request):
 	return render(request, 'voluntariado/registro.html')
 
-<<<<<<< HEAD
-=======
 def login(request):
 
 	if request.POST:
@@ -61,4 +59,3 @@ def contacto(request):
 
 def donaciones(request):
 	return render(request,"voluntariado/donaciones.html")
->>>>>>> origin
