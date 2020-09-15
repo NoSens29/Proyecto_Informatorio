@@ -33,7 +33,7 @@ def registro(request):
 	return render(request, 'voluntariado/registro.html')
 
 def login(request):
-<<<<<<< HEAD
+
 	if request.POST:
 		data = request.POST
 		user = data['username']
@@ -45,8 +45,6 @@ def login(request):
 		except:
 			pass
 	return render(request, 'voluntariado/login.html')
-=======
-	return render(request, 'voluntariado/login.html')
 
 def Historiadefavores(request):
 	return render(request,'voluntariado/Historiadefavores.html')
@@ -56,4 +54,3 @@ def contacto(request):
 
 def donaciones(request):
 	return render(request,"voluntariado/donaciones.html")
->>>>>>> 937f770ef5728d082a659672c3c3a84f8eeed4b8
