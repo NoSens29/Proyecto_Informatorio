@@ -1,0 +1,20 @@
+<h2>Iniciar sesión</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    {{usuario}}
+    <br>
+    {{contrasenia}}
+    <br>
+    {{num_personas}}
+    <br>
+    {{persona.contrasenia}}
+    <br>
+    <label>Usuario</label><input type="" name="username"><br>
+    <label>Contraseña</label><input type="password" name="password"><br>
+
+    <button type="submit">Login</button>
+</form>
+
+<hr />
+<a href="/register">Registrar usuario</a>
