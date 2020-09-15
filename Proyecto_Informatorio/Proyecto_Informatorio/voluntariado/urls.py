@@ -19,7 +19,7 @@ urlpatterns = [
 
       path('Historiadefavores/', views.Historiadefavores, name="Historial"),  
 
-      path('contacto/', views.contacto, name="contacto"),  
+      path('contacto/', views.contacto, name="Contacto"),  
 
       path('donaciones/', views.donaciones, name="donaciones"),  
 

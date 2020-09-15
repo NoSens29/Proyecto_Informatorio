@@ -5,58 +5,27 @@
 
 {% block content %}
 
-<br>
-<div id="formulario" class="col-md-7">
-  <h1>FORMULARIO DE REGISTRO</h1>  
-  </div><br>
 <form method="POST">
-  {% csrf_token %}
-  <div id="div" class="form-row">
-    <div class="form-group col-md-6">
-      <label>Nombre Completo:</label>
-      <input type="" class="form-control" placeholder="Ingrese su nombre">
+	{% csrf_token %}
+	<label>Nombre</label><input type="" name="name"><br>
+	<label>Apellido</label><input type="" name="surname"><br>
+	<label>Usuario</label><input type="" name="username"><br>
+	<label>DNI</label><input type="" name="dni"><br>
+	<label>Teléfono</label><input type="" name="phone"><br>
+	<label>Mail</label><input type="" name="email"><br>
+	<label>Dirección</label><input type="" name="adress"><br>
+    <label>Contraseña</label><input type="password" name="password">
+    <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="True">
+    <label class="form-check-label" for="inlineCheckbox1">voluntario</label>
     </div>
-    <div class="form-group col-md-6">
-      <label>Apellido:</label>
-      <input type="" class="form-control" placeholder="Ingrese su apellido">
+    <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" value="True">
+    <label class="form-check-label" for="inlineCheckbox2">Solicitante</label>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress2">Dni:</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="Ingrese su dni">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress2">Telefono:</label>
-    <input type="text" class="form-control" placeholder="Ingrese su telefono">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity"> Direccion:</label>
-      <input type="text" class="form-control" placeholder=" Ingrese su direccion">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputState">Ciudad:</label>
-      <input type="text" class="form-control" placeholder=" Ingrese su ciudad">
-    </div>
-    <div class="form-group col-md-12">
-      <label> Email:</label>
-      <input type="" class="form-control" placeholder=" Ingrese su email">
-    </div>
-    <div class="form-group col-md-12">
-      <label >Contraseña</label>
-      <input type="" class="form-control" placeholder=" Ingrese su contraseña">
-    </div>
-    <div class="form-group col-md-12">
-      <select class="custom-select" required> 
-      <option value="1">Seleccione una opcion</option> 
-      <option value="2">Voluntario</option>
-      <option value="3">Solicitante</option>
-      </select>
-    </div>
-  </div>  
-  <br>
-  <br>
-  <button type="submit" class="btn col-md-6 btn-primary">Registrarse</button>
+	<input type="hidden" name="admin" value="False"><br>
+	<input type="hidden" name="voluntary" value="True"><br>
+	<input type="hidden" name="solicitant" value="False"><br>
+	<button type="submitt">Registrarse</button>
 </form>
-
 {% endblock %}
