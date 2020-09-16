@@ -38,17 +38,19 @@ def registro(request):
 	return render(request, 'voluntariado/registro.html')
 
 def login(request):
+	persona = 1
 	if request.POST:
 		data = request.POST
 		user = data['username']
 		password = data['password']
 		try:
+			persona = 2
 			persona = Persona.objects.get(usuario=user)
 			if password == persona.contrasenia:
 				return redirect('Home')
 		except:
 			pass
-	return render(request, 'voluntariado/login.html')
+	return render(request, 'voluntariado/login.html',context={'pass':persona})
 
 def Historiadefavores(request):
 	return render(request,'voluntariado/Historiadefavores.html')
