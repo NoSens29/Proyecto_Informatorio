@@ -1,14 +1,45 @@
+{% extends "voluntariado/base.html" %}
 
-<form method="POST">
-	{% csrf_token %}
-	<label>Nombre</label><input type="" name="name"><br>
-	<label>Apellido</label><input type="" name="surname"><br>
-	<label>DNI</label><input type="" name="dni"><br>
-	<label>Teléfono</label><input type="" name="phone"><br>
-	<label>Mail</label><input type="" name="email"><br>
-	<label>Dirección</label><input type="" name="adress"><br>
-	<input type="hidden" name="admin" value="False"><br>
-	<input type="hidden" name="voluntary" value="False"><br>
-	<input type="hidden" name="solicitant" value="True"><br>
-	<button type="submitt">Registrarse</button>
-</form>
+{% load static %}
+
+
+{% block content %}
+<h2 style="color: white; text-align: center; padding: 10px;"> Formulario </h2>
+<div class="row">
+  <div class="col-6" style=" margin: auto; border-radius: 15px; opacity: 0.75; padding-top: 25px;">
+    <form style="padding: 50px;background-color:#1A4907;margin-top:50px; text-align: center; padding-top: 25px;
+   width: 500px;   
+   margin: auto;  
+   border-radius: 15px;    
+   -moz-border-radius: 15px;  
+   -webkit-border-radius: 15px;">
+        <div class="form-group" style="">
+            <label style="color: #999" >Nombre Completo</label>
+            <input type="text"  class="form-control" placeholder="Escriba su nombre completo">
+        </div>
+        <div class="form-group">
+          <label style="color: #999;" >Apellido</label>
+          <input type="" class="form-control" required="" placeholder="Escriba su apellido">
+        </div>  
+       <div>
+         <label style="color: #999 ;">Dni</label>
+         <input type="text" class="form-control" required="" placeholder="Escriba su dni">
+       </div>
+      <div class="form-group">
+        <label style="color: #999;" >Direccion</label>
+        <input type="" class="form-control" required="" placeholder="escriba su direccion">
+      </div>
+       <div class="form-group">
+        <label style="color: #999;" >Email</label>
+        <input type="" class="form-control" required="" placeholder="escriba su email">
+      </div>
+      <label style="color: #999;" >Telefono</label>
+        <input type="" class="form-control" required="" placeholder="escriba su telefono"><br>
+      <button type="button" class="btn btn-success">Registrar solicitud</button>
+    </div>
+     </form>
+  </div>  
+</div>
+
+
+{% endblock %}
