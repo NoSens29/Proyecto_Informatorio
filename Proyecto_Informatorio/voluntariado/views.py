@@ -1,7 +1,8 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.template import loader
 from .models import Persona, Actividad
-
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, authenticate
 # Create your views here.
 def home(request):
 	num_voluntarios = Persona.objects.filter(voluntario=True).count() #del modelo de Persona cuento todos los que están como voluntarios
@@ -11,8 +12,8 @@ def home(request):
 	return render(request, "voluntariado/home.html",context={'num_voluntarios':num_voluntarios,'num_favores':num_favores,'num_faltantes':num_faltantes})
 
 
-def login(request):
-	return render(request, 'voluntariado/login.html')
+#def login(request):
+#	return render(request, 'voluntariado/login.html')
 
 	
 def registrar_voluntario(request):
@@ -38,7 +39,6 @@ def registro(request):
 	return render(request, 'voluntariado/registro.html')
 
 def login(request):
-
 	if request.POST:
 		data = request.POST
 		user = data['username']

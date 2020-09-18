@@ -1,6 +1,6 @@
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from voluntariado import views
 
 urlpatterns = [
@@ -9,7 +9,7 @@ urlpatterns = [
       path('Home', views.home, name = "Home"),
  #     path('home/', views.home, name="Home"),
 
- 	  path('login/', views.login, name ="login"),
+ 	path('login/', views.login, name ="login"),
 
       path('registro/', views.registro, name ="registro"),     
 
@@ -21,8 +21,8 @@ urlpatterns = [
 
       path('contacto/', views.contacto, name="Contacto"),  
 
-      path('donaciones/', views.donaciones, name="donaciones"),  
+      path('donaciones/', views.donaciones, name="donaciones"),
 
-      
+     #  path('', include('django.contrib.auth.urls'))
 
 ]
