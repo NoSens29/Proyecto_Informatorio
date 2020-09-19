@@ -18,17 +18,11 @@
 </head>
 
 <body>
-    <div class="container">
 
-      <div class="item" id="item1"><img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'voluntariado/img/principal.jpeg' %}" alt=""></div>
-
-      <div class="item" id="item2"><h1 class="site-heading text-center text-white d-none d-lg-block">
-        
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      
         <span class="site-heading-lower">Voluntarios En Accion</span>
-      </h1> </div>
-      </div>
-
-    
+      </h1>
 
 
  <!-- Navbar -->
@@ -44,24 +38,20 @@
       
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
-
-          <li class="nav-item px-lg-4">
+          <li class="nav-item active px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Inicio</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'login' %}">Login</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Registro</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'registro'%}">Registro</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Historias de favores</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Historial'%}">Historias de favores</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Contacto</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto'%}">Contacto</a>
-          </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'donaciones'%}">Donaciones</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Donaciones</a>
           </li>
          
         </ul>
