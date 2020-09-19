@@ -6,6 +6,7 @@ body {
   background-size: cover;
 }
 
+
 h1,
 h2,
 h3,
@@ -19,9 +20,6 @@ p {
   line-height: 1.75;
 }
 
-.text-faded {
-  color: rgba(255, 255, 255, 0.3);
-}
 
 .site-heading {
   margin-top: 5rem;
@@ -80,7 +78,7 @@ p {
 }
 
 #mainNav {
-  background-color: rgba(244, 77, 77, 0.9);
+  background-color: rgba(247 9 6);
   font-family: 'Raleway';
 }
 
@@ -134,7 +132,7 @@ p {
     left: 600;
     width: 60%;
     margin-top: 3rem;
-    background-color: rgba(246, 171, 108);
+    background-color: rgba(247 9 6);
     color: rgba(255,255,255,255);
     position: absolute;
   }
@@ -228,7 +226,7 @@ p {
 }
 
 .footer {
-   background-color: rgb(235, 88, 89);
+   background-color: rgba(247 9 6);;
 }
 
 
@@ -287,11 +285,11 @@ ul.errorlist{
   padding: 1em;
 
 }
-#item1{
+
+#item1 {
   float: left;
   width:20em;
   height:20em;
-  border-radius: 100px;
 }
 
 #item2{
