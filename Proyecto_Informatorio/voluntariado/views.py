@@ -1,7 +1,11 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.template import loader
-from .models import Persona, Actividad
-from .forms import PersonaForm
+from .models import Persona, Actividad, MiUsuario
+from .forms import PersonaForm, MiUsuarioCreationForm, ActividadForm
+from django.contrib.auth import authenticate
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login as do_login
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 def home(request):
@@ -38,19 +42,17 @@ def registro(request):
 	return render(request, 'voluntariado/registro.html')
 
 def login(request):
-	persona = 1
 	if request.POST:
 		data = request.POST
 		user = data['username']
 		password = data['password']
 		try:
-			persona = 2
 			persona = Persona.objects.get(usuario=user)
 			if password == persona.contrasenia:
 				return redirect('Home')
 		except:
 			pass
-	return render(request, 'voluntariado/login.html',context={'pass':persona})
+	return render(request, 'voluntariado/login.html')
 
 def Historiadefavores(request):
 	return render(request,'voluntariado/Historiadefavores.html')
@@ -60,3 +62,63 @@ def contacto(request):
 
 def donaciones(request):
 	return render(request,"voluntariado/donaciones.html")
+
+
+def login2(request):
+    # Creamos el formulario de autenticación vacío
+    form = AuthenticationForm()
+    if request.method == "POST":
+        # Añadimos los datos recibidos al formulario
+        form = AuthenticationForm(data=request.POST)
+        # Si el formulario es válido...
+        if form.is_valid():
+            # Recuperamos las credenciales validadas
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+
+            # Verificamos las credenciales del usuario
+            user = authenticate(username=username, password=password)
+
+            # Si existe un usuario con ese nombre y contraseña
+            if user is not None:
+                # Hacemos el login manualmente
+                do_login(request, user)
+                # Y le redireccionamos a la portada
+                return redirect('Home')
+
+    # Si llegamos al final renderizamos el formulario
+    return render(request, "voluntariado/login2.html", {'form': form})
+
+def registro_miusuario(request):
+	# Creamos el formulario de autenticación vacío
+	form = MiUsuarioCreationForm()
+	if request.method == "POST":
+		# Añadimos los datos recibidos al formulario
+		form = MiUsuarioCreationForm(data=request.POST)
+		# Si el formulario es válido...
+		if form.is_valid():
+			# Creamos la nueva cuenta de usuario
+			user = form.save()
+			# Si el usuario se crea correctamente
+			if user is not None:
+				# Hacemos el login manualmente
+				do_login(request, user)
+				# Y le redireccionamos a la portada
+				return redirect('/')
+	# Si llegamos al final renderizamos el formulario
+	return render(request, "voluntariado/registro_miusuario.html", {'form':form})
+
+def registro_actividad(request):
+	#Establezco que formulario voy a utilizar
+	form = ActividadForm
+	#Consulto si el request viene con post o es la primera vez que se ejecuta
+	if request.method == "POST":
+		#Añadimos los datos recibidos a la variable form
+		form = ActividadForm(data=request.POST)
+		#consultamos si el formulario es válido
+		if form.is_valid():
+			#registramos la actividad
+			actividad = form.save()
+
+			return redirect('Home')
+	return render(request, "voluntariado/registro_actividad.html", {'form':form})

@@ -22,4 +22,10 @@ urlpatterns = [
       path('contacto/', views.contacto, name="Contacto"),  
 
       path('donaciones/', views.donaciones, name="donaciones"),  
+
+      path('registro_miusuario/', views.registro_miusuario, name="registro_miusuario"),
+
+      path('login2/', views.login2, name="login2"),
+
+      path('registro_actividad/', views.registro_actividad, name="registro_actividad"),
 ]

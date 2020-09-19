@@ -1,6 +1,6 @@
 from django.db import models
 from django import forms
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Persona(models.Model):
@@ -30,3 +30,14 @@ class Actividad(models.Model):
 	
 	def __str__(self):
 		return (self.nombre + ' Fecha: '+str(self.fecha))
+
+
+class MiUsuario(models.Model):
+	mi_usuario = models.OneToOneField(User, on_delete = models.CASCADE)
+	dni = models.IntegerField()
+	voluntario = models.BooleanField()
+	solicitante = models.BooleanField()
+
+	def __str__(self):
+		return (' es voluntario: '+self.voluntario+' es solicitante: '+self.solicitante)
+
