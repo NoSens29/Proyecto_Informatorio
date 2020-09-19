@@ -1,4 +1,3 @@
-
 from django.contrib import admin
 from django.urls import path
 from voluntariado import views
@@ -7,9 +6,10 @@ urlpatterns = [
       path('', views.home ),
 
       path('Home', views.home, name = "Home"),
- #     path('home/', views.home, name="Home"),
 
- 	  path('login/', views.login, name ="login"),
+      path('login/', views.login, name ="login"),
+
+      path('form_persona/', views.registrar_persona, name='form_persona'),
 
       path('registro/', views.registro, name ="registro"),     
 
@@ -23,6 +23,9 @@ urlpatterns = [
 
       path('donaciones/', views.donaciones, name="donaciones"),  
 
-      
+      path('registro_miusuario/', views.registro_miusuario, name="registro_miusuario"),
 
+      path('login2/', views.login2, name="login2"),
+
+      path('registro_actividad/', views.registro_actividad, name="registro_actividad"),
 ]
