@@ -11,18 +11,27 @@
     
      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
      <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
-     
+     <!-- Include Font Awesome Stylesheet in Header -->
+     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <!-- // -->
 
     <!-- Styles -->
     <link href="{% static 'voluntariado/css/gestion.css' %}" rel="stylesheet">
 </head>
 
 <body>
+    <div class="container">
 
-    <h1 class="site-heading text-center text-white d-none d-lg-block">
-      
+      <div class="item" id="item1"><img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'voluntariado/img/principal.jpeg' %}" alt=""></div>
+
+      <div class="item" id="item2"><h1 class="site-heading text-center text-white d-none d-lg-block">
+        
         <span class="site-heading-lower">Voluntarios En Accion</span>
-      </h1>
+      </h1> </div>
+      </div>
+
+    
 
 
  <!-- Navbar -->
@@ -38,23 +47,28 @@
       
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item active px-lg-4">
+
+          <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Inicio</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Registro</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'login' %}">Login</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Historias de favores</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'registro'%}">Registro</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Contacto</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Historial'%}">Historias de favores</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Donaciones</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto'%}">Contacto</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'donaciones'%}">Donaciones</a>
           </li>
          
         </ul>
+        
       </div>
     </div>
   </nav>
@@ -72,6 +86,7 @@
       <!-- Footer -->
     <footer class="footer text-faded text-center py-5">
       <div class="container">
+        <hr>
         <p class="m-0">
 	        <a href="#" class="link">
 	          <span class="fa-stack fa-lg">
@@ -91,15 +106,23 @@
 	            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
 	          </span>
 	        </a>
-	    </p>
+	      </p>
         <p class="m-0 mbt">
         	<a href="sample.html" class="link">Política de privacidad</a> ·
         	<a href="sample.html" class="link">Aviso legal</a> ·
         	<a href="sample.html" class="link">Cookies</a>
-		</p>
-        <p class="m-0 mbt1">&copy; Voluntarios En Accion 2020</p>
+		    </p>
 
+        <p class="m-0 mbt1">&copy; Voluntarios En Accion 2020</p>
+        
       </div>
+      <hr>
+      <div class="container">
+
+    
+</div>
+
+<br />
 	</footer>
 
     <!-- Bootstrap -->
