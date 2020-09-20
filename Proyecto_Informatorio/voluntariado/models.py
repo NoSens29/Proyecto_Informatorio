@@ -15,12 +15,7 @@ class Persona(models.Model):
 	voluntario = models.BooleanField(null=True, blank=True)
 	solicitante = models.BooleanField(null=True, blank=True)
 	contrasenia = models.CharField(max_length=60, default="usuario")
-<<<<<<< HEAD
-	usuario = models.CharField(max_length=20) 
-
-=======
 	usuario = models.CharField(max_length=20)
->>>>>>> origin
 
 	def __str__(self):
 		return (self.nombre + ', '+self.apellido)
@@ -46,3 +41,9 @@ class MiUsuario(models.Model):
 	def __str__(self):
 		return (' es voluntario: '+self.voluntario+' es solicitante: '+self.solicitante)
 
+
+
+class Contacto(models.Model):
+	nombre = models.CharField(max_length=60)
+	email = models.EmailField(max_length=60)
+	mensaje = models.CharField(max_length=200)

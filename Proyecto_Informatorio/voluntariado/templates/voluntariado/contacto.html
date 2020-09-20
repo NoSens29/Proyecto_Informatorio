@@ -6,25 +6,24 @@
 {% block content %}
 
 <h1>Tienes algo para decir?</h1>
-
 <section class="page-section cta">
 	<div class="container">
 		<div class="row">
           <div class="col-xl-9 mx-auto">
-            <div class="cta-inner text-center rounded">
 				<p>A través de este formulario puedes enviarme un mensaje para ayudarme a corregir errores, a mejorar mi blog, o simplemente para decir hola. Cualquier cosa que tengas para decir es bienvenida, así que no lo dudes y déjame un mensaje. Estaré feliz de contestarte!</p>
-				<form >
-				  <fieldset>
+				<form  method="POST">	
+					{% csrf_token %}
+				  <!--<fieldset>-->
 				    <legend>Mensaje</legend>
-				    <p><label>Tu nombre: <input type="text" name="nombre"></label></p>
-				    <p><label>Tu dirección de correo: <input type="text" name="correo"></label></p>
+				    <p><label>Tu nombre: <input type="" name="nombre"></label></p>
+				    <p><label>Tu dirección de correo: <input type="" name="email"></label></p>
 				    <p>
 				      <label>
 				        Tu mensaje:<br>
 				        <textarea name="mensaje"></textarea>
 				      </label>
 				    </p>
-				  </fieldset>
+				  <!--</fieldset>-->
 				  <fieldset>
 				    <legend>Nuevos temas</legend>
 				    <p>
@@ -40,7 +39,6 @@
 				    <input type="reset" value="Comenzar de nuevo">
 				  </p>
 				</form>
-			</div>
           </div>
         </div>
 	</div>

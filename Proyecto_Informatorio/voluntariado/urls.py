@@ -7,13 +7,9 @@ urlpatterns = [
 
       path('Home', views.home, name = "Home"),
 
-<<<<<<< HEAD
- 	path('login/', views.login, name ="login"),
-=======
       path('login/', views.login, name ="login"),
 
       path('form_persona/', views.registrar_persona, name='form_persona'),
->>>>>>> origin
 
       path('registro/', views.registro, name ="registro"),     
 
@@ -27,13 +23,9 @@ urlpatterns = [
 
       path('donaciones/', views.donaciones, name="donaciones"),
 
-<<<<<<< HEAD
-     #  path('', include('django.contrib.auth.urls'))
-=======
       path('registro_miusuario/', views.registro_miusuario, name="registro_miusuario"),
 
       path('login2/', views.login2, name="login2"),
->>>>>>> origin
 
       path('registro_actividad/', views.registro_actividad, name="registro_actividad"),
 ]

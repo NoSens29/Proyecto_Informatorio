@@ -1,18 +1,12 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.template import loader
-<<<<<<< HEAD
-from .models import Persona, Actividad
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login, authenticate
-=======
-from .models import Persona, Actividad, MiUsuario
-from .forms import PersonaForm, MiUsuarioCreationForm, ActividadForm
+from .models import Persona, Actividad, MiUsuario, Contacto
+from .forms import PersonaForm, MiUsuarioCreationForm, ActividadForm, ContactoForm
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as do_login
 from django.contrib.auth.forms import UserCreationForm
 
->>>>>>> origin
 # Create your views here.
 def home(request):
 	num_voluntarios = Persona.objects.filter(voluntario=True).count() #del modelo de Persona cuento todos los que están como voluntarios
@@ -68,8 +62,6 @@ def login(request):
 def Historiadefavores(request):
 	return render(request,'voluntariado/Historiadefavores.html')
 
-def contacto(request):
-	return render(request,'voluntariado/contacto.html')
 
 def donaciones(request):
 	return render(request,"voluntariado/donaciones.html")
@@ -133,3 +125,11 @@ def registro_actividad(request):
 
 			return redirect('Home')
 	return render(request, "voluntariado/registro_actividad.html", {'form':form})
+
+def contacto(request):
+	if request.POST:
+		POST = request.POST
+		nuevo_contacto = Contacto(nombre=POST['nombre'], email=POST['email'], mensaje=['mensaje'])
+		nuevo_contacto.save()
+
+	return render(request,'voluntariado/contacto.html')
