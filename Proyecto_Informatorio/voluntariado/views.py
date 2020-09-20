@@ -1,11 +1,18 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.template import loader
+<<<<<<< HEAD
 from .models import Persona, Actividad, MiUsuario, Contacto
 from .forms import PersonaForm, MiUsuarioCreationForm, ActividadForm, ContactoForm
+=======
+
+from .models import Persona, Actividad, MiUsuario
+from .forms import PersonaForm, MiUsuarioCreationForm, ActividadForm
+>>>>>>> master
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as do_login
 from django.contrib.auth.forms import UserCreationForm
+
 
 # Create your views here.
 def home(request):
@@ -62,6 +69,16 @@ def login(request):
 def Historiadefavores(request):
 	return render(request,'voluntariado/Historiadefavores.html')
 
+<<<<<<< HEAD
+=======
+def contacto(request):
+	if request.POST:
+		POST= request.POST
+		nuevo_contacto = Contacto(tu_nombre=POST['nombre'], tu_direccion_de_correo=POST['email'], tu_mensaje=POST['mensaje'])
+		nuevo_contacto.save()
+
+	return render(request,'voluntariado/contacto.html')
+>>>>>>> master
 
 def donaciones(request):
 	return render(request,"voluntariado/donaciones.html")

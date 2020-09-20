@@ -6,6 +6,12 @@ class PersonaForm(forms.ModelForm):
 
     class Meta:
         model = Persona
+
+        fields = ('dni','nombre','apellido',,'usuario','telefono','mail','direccion','contrasenia','solicitante','voluntario')
+
+
+
+
         fields = ('dni','nombre','apellido','usuario','telefono','mail','direccion','contrasenia','solicitante','voluntario')
 
 
@@ -20,8 +26,25 @@ class ActividadForm(forms.ModelForm):
 		model = Actividad
 		fields =('nombre','fecha','realizada','id_solicitante')
 
+<<<<<<< HEAD
 class ContactoForm(forms.ModelForm):
 
         class Meta:
                 model = Contacto
                 fields = ('nombre', 'email', 'mensaje')
+=======
+
+
+
+
+
+
+
+
+
+class ContactoForm(forms.ModelForm):
+	
+	class Meta:
+		model = Contacto 
+		
+>>>>>>> master
