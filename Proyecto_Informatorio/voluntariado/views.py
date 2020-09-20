@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.template import loader
-from .models import Persona, Actividad, MiUsuario
+from .models import Persona, Actividad, User
 from .forms import PersonaForm, MiUsuarioCreationForm, ActividadForm
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm

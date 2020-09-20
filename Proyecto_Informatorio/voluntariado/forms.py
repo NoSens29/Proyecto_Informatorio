@@ -1,6 +1,7 @@
 from django import forms
-from .models import Persona, Actividad, MiUsuario
-from django.contrib.auth.forms import UserCreationForm
+from .models import Persona, Actividad, User
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from voluntariado.models import User
 
 class PersonaForm(forms.ModelForm):
 
@@ -12,8 +13,8 @@ class PersonaForm(forms.ModelForm):
 class MiUsuarioCreationForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
-        model = MiUsuario
-        fields = ('mi_usuario','dni', 'voluntario', 'solicitante')
+        model = User #MiUsuario
+        fields = ('first_name', 'last_name','dni', 'voluntario', 'solicitante')
 
 class ActividadForm(forms.ModelForm):
 	class Meta:

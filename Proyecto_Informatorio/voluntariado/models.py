@@ -1,6 +1,6 @@
 from django.db import models
 from django import forms
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 class Persona(models.Model):
@@ -31,7 +31,7 @@ class Actividad(models.Model):
 	def __str__(self):
 		return (self.nombre + ' Fecha: '+str(self.fecha))
 
-
+'''
 class MiUsuario(models.Model):
 	mi_usuario = models.OneToOneField(User, on_delete = models.CASCADE)
 	dni = models.IntegerField()
@@ -40,4 +40,15 @@ class MiUsuario(models.Model):
 
 	def __str__(self):
 		return (' es voluntario: '+self.voluntario+' es solicitante: '+self.solicitante)
+'''
+class User(AbstractUser):
+	dni = models.IntegerField()
+	voluntario = models.BooleanField()
+	solicitante = models.BooleanField()
 
+	class Meta:
+		db_table = 'auth_user'
+
+	def __str__(self):
+		return (' es voluntario: '+self.voluntario+' es solicitante: '+self.solicitante)
+#class MiUsuarioAbstracto(AbstractUser):
