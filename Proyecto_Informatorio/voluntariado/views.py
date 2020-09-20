@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.template import loader
 from .models import Persona, Actividad
+from .models import Contacto
 
 # Create your views here.
 def home(request):
@@ -50,6 +51,11 @@ def Historiadefavores(request):
 	return render(request,'voluntariado/Historiadefavores.html')
 
 def contacto(request):
+	if request.POST:
+		POST= request.POST
+		nuevo_contacto = Contacto(tu_nombre=POST['nombre'], tu_direccion_de_correo=POST['email'], tu_mensaje=POST['mensaje'])
+		nuevo_contacto.save()
+
 	return render(request,'voluntariado/contacto.html')
 
 def donaciones(request):
