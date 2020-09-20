@@ -6,6 +6,7 @@ body {
   background-size: cover;
 }
 
+
 h1,
 h2,
 h3,
@@ -19,9 +20,6 @@ p {
   line-height: 1.75;
 }
 
-.text-faded {
-  color: rgba(255, 255, 255, 0.3);
-}
 
 .site-heading {
   margin-top: 5rem;
@@ -134,7 +132,7 @@ p {
     left: 600;
     width: 60%;
     margin-top: 3rem;
-    background-color: rgba(246, 171, 108);
+    background-color: rgba(247 9 6);
     color: rgba(255,255,255,255);
     position: absolute;
   }
@@ -149,6 +147,7 @@ p {
 @media (min-width: 1200px) {
   .intro .intro-text {
     width: 45%;
+    box-shadow: 20px 40px 48px -39px #212529;
   }
 }
 
@@ -228,7 +227,7 @@ p {
 }
 
 .footer {
-   background-color: rgb(235, 88, 89);
+   background-color: rgba(244, 77, 77, 0.9);
 }
 
 
@@ -287,11 +286,11 @@ ul.errorlist{
   padding: 1em;
 
 }
-#item1{
+
+#item1 {
   float: left;
   width:20em;
   height:20em;
-  border-radius: 100px;
 }
 
 #item2{
@@ -302,5 +301,5 @@ ul.errorlist{
 #empleado{
   width:30em;
   height:40em;
-}
+  box-shadow: 17px 10px 29px -1px rgb(66 65 66 / 77%);}
 
