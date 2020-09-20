@@ -39,5 +39,26 @@ class MiUsuario(models.Model):
 	solicitante = models.BooleanField()
 
 	def __str__(self):
+
+		return (self.nombre + ' Fecha: '+str(self.fecha))
+
+
+
+
+
+
 		return (' es voluntario: '+self.voluntario+' es solicitante: '+self.solicitante)
 
+
+
+
+
+class Contacto(models.Model):
+	id = models.IntegerField(primary_key= True, editable= False)
+	tu_nombre = models.CharField(max_length=60)
+	tu_direccion_de_correo = models.EmailField()
+	tu_mensaje = models.TextField(max_length=200)
+    
+	def __str__(self):
+		
+		return (self.tu_nombre) 
