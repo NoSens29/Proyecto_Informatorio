@@ -40,14 +40,7 @@ class MiUsuario(models.Model):
 
 	def __str__(self):
 
-		return (self.nombre + ' Fecha: '+str(self.fecha))
-
-
-
-
-
-
-		return (' es voluntario: '+self.voluntario+' es solicitante: '+self.solicitante)
+	return (' es voluntario: '+self.voluntario+' es solicitante: '+self.solicitante)
 
 
 
