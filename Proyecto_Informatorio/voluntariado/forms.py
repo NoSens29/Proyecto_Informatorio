@@ -1,12 +1,9 @@
 from django import forms
-<<<<<<< HEAD
 
-from .models import Persona, Contacto
+from .models import Persona, Actividad, MiUsuario, Contacto
 
-=======
-from .models import Persona, Actividad, MiUsuario
 from django.contrib.auth.forms import UserCreationForm
->>>>>>> 616214b7bf9fb7bbae62b735ef37ec159fe1bb10
+
 
 class PersonaForm(forms.ModelForm):
 
@@ -15,11 +12,8 @@ class PersonaForm(forms.ModelForm):
 
         fields = ('dni','nombre','apellido',,'usuario','telefono','mail','direccion','contrasenia','solicitante','voluntario')
 
-
-
-
-        fields = ('dni','nombre','apellido','usuario','telefono','mail','direccion','contrasenia','solicitante','voluntario')
-
+	
+	
 
 class MiUsuarioCreationForm(UserCreationForm):
 
@@ -27,6 +21,7 @@ class MiUsuarioCreationForm(UserCreationForm):
         model = MiUsuario
         fields = ('mi_usuario','dni', 'voluntario', 'solicitante')
 
+	
 class ActividadForm(forms.ModelForm):
 	class Meta:
 		model = Actividad
@@ -45,4 +40,4 @@ class ContactoForm(forms.ModelForm):
 	
 	class Meta:
 		model = Contacto 
-		
+		fields = ('tu_nombre','tu_direccion_de_correo','tu_mensaje')
