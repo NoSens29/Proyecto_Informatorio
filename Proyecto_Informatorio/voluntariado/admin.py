@@ -16,8 +16,8 @@ from voluntariado.models import User
 
 # Heredamos del UserAdmin original para usar nuestros formularios customizados
 class MiUsuarioAdmin(UserAdmin):
-    form = MiUsuarioForm
-    add_form = MiUsuarioCreationCreationForm
+    form = MiUsuarioCreationForm
+    add_form = MiUsuarioCreationForm
     fieldsets = UserAdmin.fieldsets + (
         (
             None, {
@@ -30,9 +30,9 @@ class MiUsuarioAdmin(UserAdmin):
         ),
     )
 
-
+'''
 @admin.register(User)
-class UserAdmin(CustomUserAdmin):
+class UserAdmin(MiUsuarioCreationForm):
     list_display =  (
         'id',
         'username',
@@ -79,3 +79,4 @@ class PhysiotherapistAdmin(admin.ModelAdmin):
         'active',
         'user_id'
     )
+   '''
