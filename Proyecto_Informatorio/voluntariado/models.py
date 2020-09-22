@@ -51,12 +51,6 @@ class MiUsuario(models.Model):
 
 
 
-<<<<<<< HEAD
-class Contacto(models.Model):
-	nombre = models.CharField(max_length=60)
-	email = models.EmailField(max_length=60)
-	mensaje = models.CharField(max_length=200)
-=======
 
 
 class Contacto(models.Model):
@@ -68,4 +62,3 @@ class Contacto(models.Model):
 	def __str__(self):
 		
 		return (self.tu_nombre) 
->>>>>>> master

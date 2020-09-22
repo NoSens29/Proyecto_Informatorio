@@ -1,13 +1,8 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.template import loader
-<<<<<<< HEAD
-from .models import Persona, Actividad, MiUsuario, Contacto
-from .forms import PersonaForm, MiUsuarioCreationForm, ActividadForm, ContactoForm
-=======
 
 from .models import Persona, Actividad, MiUsuario
 from .forms import PersonaForm, MiUsuarioCreationForm, ActividadForm
->>>>>>> master
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as do_login
@@ -69,8 +64,6 @@ def login(request):
 def Historiadefavores(request):
 	return render(request,'voluntariado/Historiadefavores.html')
 
-<<<<<<< HEAD
-=======
 def contacto(request):
 	if request.POST:
 		POST= request.POST
@@ -78,7 +71,6 @@ def contacto(request):
 		nuevo_contacto.save()
 
 	return render(request,'voluntariado/contacto.html')
->>>>>>> master
 
 def donaciones(request):
 	return render(request,"voluntariado/donaciones.html")
@@ -143,10 +135,3 @@ def registro_actividad(request):
 			return redirect('Home')
 	return render(request, "voluntariado/registro_actividad.html", {'form':form})
 
-def contacto(request):
-	if request.POST:
-		POST = request.POST
-		nuevo_contacto = Contacto(nombre=POST['nombre'], email=POST['email'], mensaje=['mensaje'])
-		nuevo_contacto.save()
-
-	return render(request,'voluntariado/contacto.html')
