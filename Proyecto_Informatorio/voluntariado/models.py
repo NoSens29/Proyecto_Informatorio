@@ -39,8 +39,7 @@ class MiUsuario(models.Model):
 	solicitante = models.BooleanField()
 
 	def __str__(self):
-
-	return (' es voluntario: '+self.voluntario+' es solicitante: '+self.solicitante)
+		return (' es voluntario: '+self.voluntario+' es solicitante: '+self.solicitante)
 
 
 

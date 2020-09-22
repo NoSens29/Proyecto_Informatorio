@@ -44,6 +44,12 @@ def registro(request):
 	return render(request, 'voluntariado/registro.html')
 
 def login(request):
+	val = request.session.get('usuario','')
+	if val != '':
+		usuario = request.session['usuario']
+	else:
+		usuario = 'No logueado'
+
 	if request.POST:
 		data = request.POST
 		user = data['username']
@@ -51,10 +57,13 @@ def login(request):
 		try:
 			persona = Persona.objects.get(usuario=user)
 			if password == persona.contrasenia:
+				request.session['validado'] = True
+				request.session['usuario'] = persona.usuario
+				usuario = persona.usuario
 				return redirect('Home')
 		except:
 			pass
-	return render(request, 'voluntariado/login.html')
+	return render(request, 'voluntariado/login.html', context={'val':val})
 
 def Historiadefavores(request):
 	return render(request,'voluntariado/Historiadefavores.html')
@@ -129,3 +138,12 @@ def registro_actividad(request):
 
 			return redirect('Home')
 	return render(request, "voluntariado/registro_actividad.html", {'form':form})
+
+#importamos de auth la funcion de desloguearse
+from django.contrib.auth import logout as do_logout
+
+def logout(request):
+	#llamamos a logout que le pusimos el alias de do_logout
+	do_logout(request)
+	#redireccionamos al home
+	return redirect('Home')
