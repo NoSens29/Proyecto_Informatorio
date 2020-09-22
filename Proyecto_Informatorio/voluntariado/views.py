@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.template import loader
-from .models import Persona, Actividad, Person
-from .forms import PersonaForm, ActividadForm
+from .models import Actividad, Person
+from .forms import ActividadForm
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as do_login
@@ -10,12 +10,12 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 def home(request):
-	num_voluntarios = Persona.objects.filter(voluntario=True).count() #del modelo de Persona cuento todos los que están como voluntarios
+	num_voluntarios = Person.objects.filter(voluntario=True).count() #del modelo de Persona cuento todos los que están como voluntarios
 	num_favores = Actividad.objects.count() #del modelo de Actividad cuento todas las actividades cargadas
 	num_faltantes = Actividad.objects.filter(realizada=False).count()
 
 	return render(request, "voluntariado/home.html",context={'num_voluntarios':num_voluntarios,'num_favores':num_favores,'num_faltantes':num_faltantes})
-
+'''
 def registrar_voluntario(request):
 	if request.POST:
 		POST = request.POST
@@ -54,7 +54,7 @@ def login(request):
 		except:
 			pass
 	return render(request, 'voluntariado/login.html')
-
+'''
 def Historiadefavores(request):
 	return render(request,'voluntariado/Historiadefavores.html')
 
@@ -89,7 +89,7 @@ def login2(request):
 
     # Si llegamos al final renderizamos el formulario
     return render(request, "voluntariado/login2.html", {'form': form})
-
+'''
 def registro_miusuario(request):
 	# Creamos el formulario de autenticación vacío
 	form = MiUsuarioCreationForm()
@@ -108,19 +108,6 @@ def registro_miusuario(request):
 				return redirect('/')
 	# Si llegamos al final renderizamos el formulario
 	return render(request, "voluntariado/registro_miusuario.html", {'form':form})
-'''
-def registro_person(request):
-	#defino usar el form de creación de usuario por defecto de django
-	#form = UserCreationForm()
-	if request.method == "POST":
-		#guardamos los datos recuperados del formulario
-		data = request.POST
-		# Si el formulario es válido...
-		user = User.objects.create_user(firstname=data['surname'],lastname=data['name'], password=data['password'], username=data['username'],email=data['mail'])
-		person = Person.objects.create(user = user, dni=data['dni'], telefono=data['telefono'], direccion=data['direccion'], voluntario=data['voluntario'],solicitante=data['solicitante'],administrador=data['administrador'])
-		person.save()
-	# Si llegamos al final renderizamos el formulario
-    return render(request, "voluntariado/registro.html", {'form':form})
 '''
 def registro_person(request):
 	if request.method == "POST":

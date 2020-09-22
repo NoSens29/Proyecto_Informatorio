@@ -1,14 +1,15 @@
 from django import forms
-from .models import Persona, Actividad, User
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from voluntariado.models import User
+from .models import Person, Actividad
+#from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+#from voluntariado.models import User
 
+'''
 class PersonaForm(forms.ModelForm):
 
     class Meta:
         model = Persona
         fields = ('dni','nombre','apellido','usuario','telefono','mail','direccion','contrasenia','solicitante','voluntario')
-'''
+
 class MiUsuarioCreationForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):

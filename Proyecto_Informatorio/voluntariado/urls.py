@@ -7,15 +7,15 @@ urlpatterns = [
 
       path('Home', views.home, name = "Home"),
 
-      path('login/', views.login, name ="login"),
+ #     path('login/', views.login, name ="login"),
 
-      path('form_persona/', views.registrar_persona, name='form_persona'),
+ #     path('form_persona/', views.registrar_persona, name='form_persona'),
 
-      path('registro/', views.registro, name ="registro"),     
+ #     path('registro/', views.registro, name ="registro"),     
 
-      path('registrar_voluntario/', views.registrar_voluntario, name="registrar_voluntario"),
+ #     path('registrar_voluntario/', views.registrar_voluntario, name="registrar_voluntario"),
       
-      path('registrar_solicitante/', views.registrar_solicitante, name ="solicitante"),
+ #     path('registrar_solicitante/', views.registrar_solicitante, name ="solicitante"),
 
       path('Historiadefavores/', views.Historiadefavores, name="Historial"),  
 
@@ -23,7 +23,7 @@ urlpatterns = [
 
       path('donaciones/', views.donaciones, name="donaciones"),  
 
-      path('registro_miusuario/', views.registro_miusuario, name="registro_miusuario"),
+ #     path('registro_miusuario/', views.registro_miusuario, name="registro_miusuario"),
 
       path('login2/', views.login2, name="login2"),
 
