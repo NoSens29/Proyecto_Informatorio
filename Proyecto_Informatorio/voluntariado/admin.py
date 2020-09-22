@@ -1,19 +1,20 @@
 from django.contrib import admin
-from voluntariado.models import Persona, Actividad
+from voluntariado.models import Persona, Actividad, Person
 
 # Register your models here.
 
 admin.site.register(Persona)
 admin.site.register(Actividad)
+admin.site.register(Person)
 
 
 from django.contrib.auth.admin import UserAdmin
 
-from voluntariado.forms import MiUsuarioCreationForm
+#from voluntariado.forms import MiUsuarioCreationForm
 
 from voluntariado.models import User
 
-
+'''
 # Heredamos del UserAdmin original para usar nuestros formularios customizados
 class MiUsuarioAdmin(UserAdmin):
     form = MiUsuarioCreationForm
@@ -30,7 +31,7 @@ class MiUsuarioAdmin(UserAdmin):
         ),
     )
 
-'''
+
 @admin.register(User)
 class UserAdmin(MiUsuarioCreationForm):
     list_display =  (

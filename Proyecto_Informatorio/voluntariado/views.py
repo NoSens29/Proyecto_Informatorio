@@ -1,11 +1,12 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.template import loader
-from .models import Persona, Actividad, User
-from .forms import PersonaForm, MiUsuarioCreationForm, ActividadForm
+from .models import Persona, Actividad, Person
+from .forms import PersonaForm, ActividadForm
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as do_login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 # Create your views here.
 def home(request):
@@ -107,6 +108,33 @@ def registro_miusuario(request):
 				return redirect('/')
 	# Si llegamos al final renderizamos el formulario
 	return render(request, "voluntariado/registro_miusuario.html", {'form':form})
+'''
+def registro_person(request):
+	#defino usar el form de creación de usuario por defecto de django
+	#form = UserCreationForm()
+	if request.method == "POST":
+		#guardamos los datos recuperados del formulario
+		data = request.POST
+		# Si el formulario es válido...
+		user = User.objects.create_user(firstname=data['surname'],lastname=data['name'], password=data['password'], username=data['username'],email=data['mail'])
+		person = Person.objects.create(user = user, dni=data['dni'], telefono=data['telefono'], direccion=data['direccion'], voluntario=data['voluntario'],solicitante=data['solicitante'],administrador=data['administrador'])
+		person.save()
+	# Si llegamos al final renderizamos el formulario
+    return render(request, "voluntariado/registro.html", {'form':form})
+'''
+def registro_person(request):
+	if request.method == "POST":
+		data = request.POST
+		user = User.objects.create_user(first_name=data['name'], last_name=data['surname'],password=data['password'],username=data['username'],email=data['email'])
+#		user = User.objects.get(username=data['username'])
+		person = Person.objects.create(user=user,dni=data['dni'],telefono=data['phone'],direccion=data['adress'],voluntario=data['voluntario'],solicitante=data['solicitant'])
+		
+		if person is not None:
+			do_login(request, user)
+
+			return redirect('Home')	
+
+	return render(request, "voluntariado/registro.html")
 
 def registro_actividad(request):
 	#Establezco que formulario voy a utilizar

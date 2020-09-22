@@ -28,4 +28,6 @@ urlpatterns = [
       path('login2/', views.login2, name="login2"),
 
       path('registro_actividad/', views.registro_actividad, name="registro_actividad"),
+
+      path('registro_person/', views.registro_person, name="registro_person"),
 ]
