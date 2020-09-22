@@ -27,7 +27,15 @@ def home(request):
 
 	return render(request, "voluntariado/home.html",context={'num_voluntarios':num_voluntarios,'num_favores':num_favores,'num_faltantes':num_faltantes})
 
+
 '''
+
+
+#def login(request):
+#	return render(request, 'voluntariado/login.html')
+
+	
+
 def registrar_voluntario(request):
 	if request.POST:
 		POST = request.POST
@@ -71,7 +79,6 @@ def login(request):
 
 def Historiadefavores(request):
 	return render(request,'voluntariado/Historiadefavores.html')
-
 
 
 def donaciones(request):
@@ -164,3 +171,4 @@ def contacto(request):
 		nuevo_contacto.save()
 		
 	return render(request,'voluntariado/contacto.html')
+

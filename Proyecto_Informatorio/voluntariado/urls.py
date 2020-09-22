@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from voluntariado import views
 
 urlpatterns = [
@@ -21,7 +21,7 @@ urlpatterns = [
 
       path('contacto/', views.contacto, name="Contacto"),  
 
-      path('donaciones/', views.donaciones, name="donaciones"),  
+      path('donaciones/', views.donaciones, name="donaciones"),
 
  #     path('registro_miusuario/', views.registro_miusuario, name="registro_miusuario"),
 
