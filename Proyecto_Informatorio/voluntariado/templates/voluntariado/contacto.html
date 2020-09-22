@@ -5,5 +5,30 @@
 
 {% block content %}
 
-<H1>Contacto</H1>
+<h1>Tienes algo para decir?</h1>
+<p>A través de este formulario puedes enviarme un mensaje para ayudarme a corregir errores, a mejorar mi blog, o simplemente para decir hola. Cualquier cosa que tengas para decir es bienvenida, así que no lo dudes y déjame un mensaje. Estaré feliz de contestarte!</p>
+
+<form method="POST">
+	{% csrf_token %}
+	{{form.as_p}}
+	<legend>Mensaje</legend>
+	<label>Tu Nombre:</label><input type="" name="nombre"><br>
+	<label>Tu dirección de correo:</label><input type="" name="email"><br>
+	<p>
+		<label>
+			Tu mensaje:<br>
+			<textarea name="mensaje" rows="5" cols="50"></textarea>
+		</label>
+	</p>
+	<legend>Nuevos temas</legend>
+	<p>
+		¿Qué clase de favores te gustaria hacer mas?<br>
+		<label><input type="checkbox" name="html"> Ayudar Animales</label>
+		<label><input type="checkbox" name="graficos"> Limpiar/Plantar Espacios Verdes</label>
+		<label><input type="checkbox" name="videojuegos"> Ayudar Personas de la tercera edad</label>
+		<label><input type="checkbox" name="arte"> Comedores</label>
+	</p>
+	<button><input type="submit" value="Enviar mensaje"></button>
+	<button><input type="reset" value="Comenzar de nuevo"></button>
+</form>
 {% endblock %}
