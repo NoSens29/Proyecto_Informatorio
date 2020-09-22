@@ -18,12 +18,15 @@ from django.contrib.auth.models import User
 
 
 # Create your views here.
+
+
 def home(request):
 	num_voluntarios = Person.objects.filter(voluntario=True).count() #del modelo de Persona cuento todos los que están como voluntarios
 	num_favores = Actividad.objects.count() #del modelo de Actividad cuento todas las actividades cargadas
 	num_faltantes = Actividad.objects.filter(realizada=False).count()
 
 	return render(request, "voluntariado/home.html",context={'num_voluntarios':num_voluntarios,'num_favores':num_favores,'num_faltantes':num_faltantes})
+
 '''
 def registrar_voluntario(request):
 	if request.POST:
@@ -64,6 +67,8 @@ def login(request):
 			pass
 	return render(request, 'voluntariado/login.html')
 '''
+
+
 def Historiadefavores(request):
 	return render(request,'voluntariado/Historiadefavores.html')
 
@@ -97,6 +102,8 @@ def login2(request):
 
     # Si llegamos al final renderizamos el formulario
     return render(request, "voluntariado/login2.html", {'form': form})
+
+
 '''
 def registro_miusuario(request):
 	# Creamos el formulario de autenticación vacío
@@ -117,6 +124,7 @@ def registro_miusuario(request):
 	# Si llegamos al final renderizamos el formulario
 	return render(request, "voluntariado/registro_miusuario.html", {'form':form})
 '''
+
 def registro_person(request):
 	if request.method == "POST":
 		data = request.POST
@@ -130,6 +138,7 @@ def registro_person(request):
 			return redirect('Home')	
 
 	return render(request, "voluntariado/registro.html")
+
 
 def registro_actividad(request):
 	#Establezco que formulario voy a utilizar
