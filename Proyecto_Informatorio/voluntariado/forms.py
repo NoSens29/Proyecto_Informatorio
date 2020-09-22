@@ -1,9 +1,11 @@
 from django import forms
 
-from .models import Persona, Actividad, MiUsuario, Contacto
+from .models import Persona, Actividad, Contacto
 
 from django.contrib.auth.forms import UserCreationForm
 
+
+'''
 
 class PersonaForm(forms.ModelForm):
 
@@ -13,13 +15,16 @@ class PersonaForm(forms.ModelForm):
         fields = ('dni','nombre','apellido','usuario','telefono','mail','direccion','contrasenia','solicitante','voluntario')
 
 	
-	
 
+        fields = ('dni','nombre','apellido','usuario','telefono','mail','direccion','contrasenia','solicitante','voluntario')
+
+	
 class MiUsuarioCreationForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
-        model = MiUsuario
-        fields = ('mi_usuario','dni', 'voluntario', 'solicitante')
+        model = User #MiUsuario
+        fields = ('first_name', 'last_name','dni', 'voluntario', 'solicitante')
+'''
 
 	
 class ActividadForm(forms.ModelForm):
