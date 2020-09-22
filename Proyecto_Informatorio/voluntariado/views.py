@@ -1,17 +1,19 @@
 from django.shortcuts import render, HttpResponse, redirect
-from django.template import loader
-<<<<<<< HEAD
 
-from .models import Persona, Actividad, MiUsuario, Contacto
+from django.template import loader
+
+from .models import Actividad,  Contacto, Person
+
 from .forms import PersonaForm, MiUsuarioCreationForm, ActividadForm
-=======
-from .models import Actividad, Person
-from .forms import ActividadForm
->>>>>>> 873f8aec17a013b0034b05b9d4403dac83e888e4
+
 from django.contrib.auth import authenticate
+
 from django.contrib.auth.forms import AuthenticationForm
+
 from django.contrib.auth import login as do_login
+
 from django.contrib.auth.forms import UserCreationForm
+
 from django.contrib.auth.models import User
 
 
