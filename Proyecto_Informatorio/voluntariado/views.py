@@ -88,8 +88,6 @@ def login(request):
 	return render(request, 'voluntariado/login.html')
 '''
 
->>>>>>> c0f4ca84e02968b0d8e4721a2e6d17f169552e21
-
 def Historiadefavores(request):
 	return render(request,'voluntariado/Historiadefavores.html')
 
@@ -175,7 +173,6 @@ def registro_actividad(request):
 			return redirect('Home')
 	return render(request, "voluntariado/registro_actividad.html", {'form':form})
 
-<<<<<<< HEAD
 #importamos de auth la funcion de desloguearse
 from django.contrib.auth import logout as do_logout
 
@@ -184,7 +181,6 @@ def logout(request):
 	do_logout(request)
 	#redireccionamos al home
 	return redirect('Home')
-=======
 
 def contacto(request):
 	if request.POST:
@@ -193,5 +189,3 @@ def contacto(request):
 		nuevo_contacto.save()
 		
 	return render(request,'voluntariado/contacto.html')
-
->>>>>>> c0f4ca84e02968b0d8e4721a2e6d17f169552e21
