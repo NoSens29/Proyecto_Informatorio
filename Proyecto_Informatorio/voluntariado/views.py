@@ -1,22 +1,28 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.template import loader
+<<<<<<< HEAD
 
 from .models import Persona, Actividad, MiUsuario, Contacto
 from .forms import PersonaForm, MiUsuarioCreationForm, ActividadForm
+=======
+from .models import Actividad, Person
+from .forms import ActividadForm
+>>>>>>> 873f8aec17a013b0034b05b9d4403dac83e888e4
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as do_login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 
 # Create your views here.
 def home(request):
-	num_voluntarios = Persona.objects.filter(voluntario=True).count() #del modelo de Persona cuento todos los que están como voluntarios
+	num_voluntarios = Person.objects.filter(voluntario=True).count() #del modelo de Persona cuento todos los que están como voluntarios
 	num_favores = Actividad.objects.count() #del modelo de Actividad cuento todas las actividades cargadas
 	num_faltantes = Actividad.objects.filter(realizada=False).count()
 
 	return render(request, "voluntariado/home.html",context={'num_voluntarios':num_voluntarios,'num_favores':num_favores,'num_faltantes':num_faltantes})
-
+'''
 def registrar_voluntario(request):
 	if request.POST:
 		POST = request.POST
@@ -55,7 +61,7 @@ def login(request):
 		except:
 			pass
 	return render(request, 'voluntariado/login.html')
-
+'''
 def Historiadefavores(request):
 	return render(request,'voluntariado/Historiadefavores.html')
 
@@ -89,7 +95,7 @@ def login2(request):
 
     # Si llegamos al final renderizamos el formulario
     return render(request, "voluntariado/login2.html", {'form': form})
-
+'''
 def registro_miusuario(request):
 	# Creamos el formulario de autenticación vacío
 	form = MiUsuarioCreationForm()
@@ -108,6 +114,20 @@ def registro_miusuario(request):
 				return redirect('/')
 	# Si llegamos al final renderizamos el formulario
 	return render(request, "voluntariado/registro_miusuario.html", {'form':form})
+'''
+def registro_person(request):
+	if request.method == "POST":
+		data = request.POST
+		user = User.objects.create_user(first_name=data['name'], last_name=data['surname'],password=data['password'],username=data['username'],email=data['email'])
+#		user = User.objects.get(username=data['username'])
+		person = Person.objects.create(user=user,dni=data['dni'],telefono=data['phone'],direccion=data['adress'],voluntario=data['voluntario'],solicitante=data['solicitant'])
+		
+		if person is not None:
+			do_login(request, user)
+
+			return redirect('Home')	
+
+	return render(request, "voluntariado/registro.html")
 
 def registro_actividad(request):
 	#Establezco que formulario voy a utilizar

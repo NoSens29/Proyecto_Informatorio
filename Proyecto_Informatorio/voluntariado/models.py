@@ -31,14 +31,17 @@ class Actividad(models.Model):
 	def __str__(self):
 		return (self.nombre + ' Fecha: '+str(self.fecha))
 
-
-class MiUsuario(models.Model):
-	mi_usuario = models.OneToOneField(User, on_delete = models.CASCADE)
+class Person(models.Model):
+	user = models.OneToOneField(User, on_delete = models.CASCADE)
 	dni = models.IntegerField()
-	voluntario = models.BooleanField()
-	solicitante = models.BooleanField()
+	telefono = models.CharField(max_length=20, null=True, blank=True)
+	direccion = models.CharField(max_length=100, null=True, blank=True)
+	administrador = models.BooleanField(null=True, blank=True, default=False)
+	voluntario = models.BooleanField(null=True, blank=True)
+	solicitante = models.BooleanField(null=True, blank=True)
 
 	def __str__(self):
+<<<<<<< HEAD
 
 		return (' es voluntario: '+self.voluntario+' es solicitante: '+self.solicitante)
 
@@ -55,3 +58,6 @@ class Contacto(models.Model):
 	def __str__(self):
 		
 		return (self.tu_nombre) 
+=======
+		return (self.user.user_name + ' solicitante: '+self.solicitante + ', voluntario: '+self.voluntario)
+>>>>>>> 873f8aec17a013b0034b05b9d4403dac83e888e4
