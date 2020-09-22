@@ -4,7 +4,7 @@ from django.template import loader
 
 from .models import Actividad,  Contacto, Person
 
-from .forms import PersonaForm, MiUsuarioCreationForm, ActividadForm
+from .forms import  ActividadForm
 
 from django.contrib.auth import authenticate
 
@@ -161,7 +161,6 @@ def registro_actividad(request):
 
 			return redirect('Home')
 	return render(request, "voluntariado/registro_actividad.html", {'form':form})
-
 
 
 def contacto(request):

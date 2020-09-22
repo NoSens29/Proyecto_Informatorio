@@ -7,11 +7,10 @@
 
 {% block content %}
 
-<form method="POST" action = '{% url "registro %}'>
+<form method="POST">
 
 	{% csrf_token %}
 
-<!-- formulario
 	<table>
 		<tr colspan="2">
 			<td><label>Nombre</label></td><td><input type="" name="name"></td>
@@ -46,11 +45,9 @@
 		<tr>
 			<td><button type="submitt">Registrarse</button></td>
 		</tr>
-	</table>--->
+	</table>
 
 
-	{{form}}
-	<button type="submitt">Registrarse</button>
 
 </form>
 {% endblock %}
