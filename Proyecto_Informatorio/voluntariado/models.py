@@ -1,7 +1,10 @@
 from django.db import models
+
 from django import forms
+
 from django.contrib.auth.models import User
 # Create your models here.
+
 
 class Persona(models.Model):
 	id = models.IntegerField(primary_key = True, editable=False)
@@ -20,6 +23,7 @@ class Persona(models.Model):
 	def __str__(self):
 		return (self.nombre + ', '+self.apellido)
 
+
 class Actividad(models.Model):
 	id = models.IntegerField(primary_key=True, editable=False)
 	nombre = models.CharField(max_length=60)
@@ -31,6 +35,7 @@ class Actividad(models.Model):
 	def __str__(self):
 		return (self.nombre + ' Fecha: '+str(self.fecha))
 
+
 class Person(models.Model):
 	user = models.OneToOneField(User, on_delete = models.CASCADE)
 	dni = models.IntegerField()
@@ -41,4 +46,15 @@ class Person(models.Model):
 	solicitante = models.BooleanField(null=True, blank=True)
 
 	def __str__(self):
+
 		return (self.user.user_name + ' solicitante: '+self.solicitante + ', voluntario: '+self.voluntario)
+
+class Contacto(models.Model):
+	id = models.IntegerField(primary_key= True, editable= False)
+	tu_nombre = models.CharField(max_length=60)
+	tu_direccion_de_correo = models.EmailField()
+	tu_mensaje = models.TextField(max_length=200)
+    
+	def __str__(self):
+		
+		return (self.tu_nombre) 

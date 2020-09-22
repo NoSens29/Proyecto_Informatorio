@@ -1,3 +1,5 @@
+<title>Registro</title>
+
 {% extends "voluntariado/base.html" %}
 
 {% load static %}
@@ -6,7 +8,9 @@
 {% block content %}
 
 <form method="POST">
+
 	{% csrf_token %}
+
 	<table>
 		<tr colspan="2">
 			<td><label>Nombre</label></td><td><input type="" name="name"></td>
@@ -42,6 +46,8 @@
 			<td><button type="submitt">Registrarse</button></td>
 		</tr>
 	</table>
+
+
 
 </form>
 {% endblock %}

@@ -1,21 +1,41 @@
 from django.shortcuts import render, HttpResponse, redirect
+
 from django.template import loader
-from .models import Actividad, Person
-from .forms import ActividadForm
+
+from .models import Actividad,  Contacto, Person
+
+from .forms import  ActividadForm
+
 from django.contrib.auth import authenticate
+
 from django.contrib.auth.forms import AuthenticationForm
+
 from django.contrib.auth import login as do_login
+
 from django.contrib.auth.forms import UserCreationForm
+
 from django.contrib.auth.models import User
 
+
 # Create your views here.
+
+
 def home(request):
 	num_voluntarios = Person.objects.filter(voluntario=True).count() #del modelo de Persona cuento todos los que están como voluntarios
 	num_favores = Actividad.objects.count() #del modelo de Actividad cuento todas las actividades cargadas
 	num_faltantes = Actividad.objects.filter(realizada=False).count()
 
 	return render(request, "voluntariado/home.html",context={'num_voluntarios':num_voluntarios,'num_favores':num_favores,'num_faltantes':num_faltantes})
+
+
 '''
+
+
+#def login(request):
+#	return render(request, 'voluntariado/login.html')
+
+	
+
 def registrar_voluntario(request):
 	if request.POST:
 		POST = request.POST
@@ -43,6 +63,12 @@ def registro(request):
 	return render(request, 'voluntariado/registro.html')
 
 def login(request):
+	val = request.session.get('usuario','')
+	if val != '':
+		usuario = request.session['usuario']
+	else:
+		usuario = 'No logueado'
+
 	if request.POST:
 		data = request.POST
 		user = data['username']
@@ -50,16 +76,21 @@ def login(request):
 		try:
 			persona = Persona.objects.get(usuario=user)
 			if password == persona.contrasenia:
+				request.session['validado'] = True
+				request.session['usuario'] = persona.usuario
+				usuario = persona.usuario
 				return redirect('Home')
 		except:
 			pass
+<<<<<<< HEAD
+	return render(request, 'voluntariado/login.html', context={'val':val})
+=======
 	return render(request, 'voluntariado/login.html')
 '''
+
 def Historiadefavores(request):
 	return render(request,'voluntariado/Historiadefavores.html')
 
-def contacto(request):
-	return render(request,'voluntariado/contacto.html')
 
 def donaciones(request):
 	return render(request,"voluntariado/donaciones.html")
@@ -89,6 +120,8 @@ def login2(request):
 
     # Si llegamos al final renderizamos el formulario
     return render(request, "voluntariado/login2.html", {'form': form})
+
+
 '''
 def registro_miusuario(request):
 	# Creamos el formulario de autenticación vacío
@@ -109,6 +142,7 @@ def registro_miusuario(request):
 	# Si llegamos al final renderizamos el formulario
 	return render(request, "voluntariado/registro_miusuario.html", {'form':form})
 '''
+
 def registro_person(request):
 	if request.method == "POST":
 		data = request.POST
@@ -122,6 +156,7 @@ def registro_person(request):
 			return redirect('Home')	
 
 	return render(request, "voluntariado/registro.html")
+
 
 def registro_actividad(request):
 	#Establezco que formulario voy a utilizar
@@ -137,3 +172,20 @@ def registro_actividad(request):
 
 			return redirect('Home')
 	return render(request, "voluntariado/registro_actividad.html", {'form':form})
+
+#importamos de auth la funcion de desloguearse
+from django.contrib.auth import logout as do_logout
+
+def logout(request):
+	#llamamos a logout que le pusimos el alias de do_logout
+	do_logout(request)
+	#redireccionamos al home
+	return redirect('Home')
+
+def contacto(request):
+	if request.POST:
+		POST= request.POST
+		nuevo_contacto = Contacto(tu_nombre=POST['nombre'], tu_direccion_de_correo=POST['email'], tu_mensaje=POST['mensaje'])
+		nuevo_contacto.save()
+		
+	return render(request,'voluntariado/contacto.html')

@@ -1,5 +1,5 @@
 <html>
-
+<title>Home</title>>
 <head>
 
 
@@ -23,7 +23,7 @@
 <body>
     <div class="container">
 
-      <div class="item" id="item1"><img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'voluntariado/img/principal.jpeg' %}" alt=""></div>
+      <div class="item" id="item1"><img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'voluntariado/img/principal.png' %}" alt style="filter: drop-shadow(0 0 0.75rem grey);"></div>
 
       <div class="item" id="item2"><h1 class="site-heading text-center text-white d-none d-lg-block">
         
@@ -50,21 +50,21 @@
 
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Inicio</a>
+          </li>    
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Historial' %}">Historias de favores</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">Contacto</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'donaciones' %}">Donaciones</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'registro_person' %}">Registro</a>
           </li>
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'login2' %}">Login</a>
-          </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'registro_person'%}">Registro</a>
-          </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Historial'%}">Historias de favores</a>
-          </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto'%}">Contacto</a>
-          </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'donaciones'%}">Donaciones</a>
           </li>
          
         </ul>
@@ -114,15 +114,15 @@
 		    </p>
 
         <p class="m-0 mbt1">&copy; Voluntarios En Accion 2020</p>
-        
+         <hr>
       </div>
-      <hr>
-      <div class="container">
+    
+    
 
     
-</div>
+  <br />
 
-<br />
+
 	</footer>
 
     <!-- Bootstrap -->
