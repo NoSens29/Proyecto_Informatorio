@@ -16,6 +16,8 @@ from django.contrib.auth.forms import UserCreationForm
 
 from django.contrib.auth.models import User
 
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -63,6 +65,12 @@ def registro(request):
 	return render(request, 'voluntariado/registro.html')
 
 def login(request):
+	val = request.session.get('usuario','')
+	if val != '':
+		usuario = request.session['usuario']
+	else:
+		usuario = 'No logueado'
+
 	if request.POST:
 		data = request.POST
 		user = data['username']
@@ -70,12 +78,17 @@ def login(request):
 		try:
 			persona = Persona.objects.get(usuario=user)
 			if password == persona.contrasenia:
+				request.session['validado'] = True
+				request.session['usuario'] = persona.usuario
+				usuario = persona.usuario
 				return redirect('Home')
 		except:
 			pass
+<<<<<<< HEAD
+	return render(request, 'voluntariado/login.html', context={'val':val})
+=======
 	return render(request, 'voluntariado/login.html')
 '''
-
 
 def Historiadefavores(request):
 	return render(request,'voluntariado/Historiadefavores.html')
@@ -146,7 +159,7 @@ def registro_person(request):
 
 	return render(request, "voluntariado/registro.html")
 
-
+@login_required
 def registro_actividad(request):
 	#Establezco que formulario voy a utilizar
 	form = ActividadForm
@@ -162,6 +175,14 @@ def registro_actividad(request):
 			return redirect('Home')
 	return render(request, "voluntariado/registro_actividad.html", {'form':form})
 
+#importamos de auth la funcion de desloguearse
+from django.contrib.auth import logout as do_logout
+
+def logout(request):
+	#llamamos a logout que le pusimos el alias de do_logout
+	do_logout(request)
+	#redireccionamos al home
+	return redirect('Home')
 
 def contacto(request):
 	if request.POST:
@@ -170,4 +191,3 @@ def contacto(request):
 		nuevo_contacto.save()
 		
 	return render(request,'voluntariado/contacto.html')
-
