@@ -7,6 +7,56 @@
 
 {% block content %}
 
+<form class="formulario" method="POST">
+	{% csrf_token %}
+
+	<i id="icono2" class="fas fa-clipboard-list fa-3x"></i> <br><span id="span">Formulario de Registro</span><hr><br><br>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label class="label">NOMBRE COMPLETO</label>
+      <input id="input" type="email" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label class="label">APELLIDOS</label>
+      <input id="input" type="" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="label">DNI</label>
+    <input id="input" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label class="label">DOMICILIO</label>
+    <input id="input" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label class="label">TELEFONO</label>
+    <input id="input" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label class="label">EMAIL</label>
+    <input id="input" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label class="label">CONTRASEÑA</label>
+    <input id="input" type="password" class="form-control">
+  </div>
+ <br>
+  <div class="form-check">
+  		<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  			<label id="cl" class="form-check-label" for="exampleRadios1">
+    		VOLUNTARIO
+  			</label>
+   	</div><div class="form-check">
+ 		 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+  		<label id="cl" class="form-check-label" for="exampleRadios2">
+   			SOLICITANTE
+  		</label>
+	</div>
+  <button id="button2" type="submit" class="btn btn-primary">Registrarse</button>
+  <hr>
+</form>
+<!--  
 <form method="POST">
 
 	{% csrf_token %}
@@ -50,4 +100,5 @@
 
 
 </form>
+-->
 {% endblock %}
