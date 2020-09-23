@@ -29,5 +29,11 @@ urlpatterns = [
 
       path('registro_actividad/', views.registro_actividad, name="registro_actividad"),
 
+      path('logout/', views.logout, name="logout"),
+
       path('registro_person/', views.registro_person, name="registro_person"),
+
+      #esto lo pongo porque si no está logueado el usuario sigue esta ruta
+      path('accounts/login/', views.login2, name='login2'),
+
 ]
