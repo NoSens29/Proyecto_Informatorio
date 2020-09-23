@@ -16,6 +16,8 @@ from django.contrib.auth.forms import UserCreationForm
 
 from django.contrib.auth.models import User
 
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -157,7 +159,7 @@ def registro_person(request):
 
 	return render(request, "voluntariado/registro.html")
 
-
+@login_required
 def registro_actividad(request):
 	#Establezco que formulario voy a utilizar
 	form = ActividadForm

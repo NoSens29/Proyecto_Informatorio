@@ -29,8 +29,8 @@ class Actividad(models.Model):
 	nombre = models.CharField(max_length=60)
 	fecha = models.DateField()
 	realizada = models.BooleanField()
-	id_solicitante = models.ForeignKey('Persona', on_delete = models.SET_NULL, null=True, blank=True, related_name = 'actividadesSol')
-	id_voluntario = models.ForeignKey('Persona', on_delete = models.SET_NULL, null=True, blank=True, related_name = 'actividadesVol')
+	id_solicitante = models.ForeignKey('Person', on_delete = models.SET_NULL, null=True, blank=True, related_name = 'actividadesSol')
+	id_voluntario = models.ForeignKey('Person', on_delete = models.SET_NULL, null=True, blank=True, related_name = 'actividadesVol')
 	
 	def __str__(self):
 		return (self.nombre + ' Fecha: '+str(self.fecha))
@@ -47,7 +47,7 @@ class Person(models.Model):
 
 	def __str__(self):
 
-		return (self.user.user_name + ' solicitante: '+self.solicitante + ', voluntario: '+self.voluntario)
+		return (self.user.username + ' solicitante: '+str(self.solicitante) + ', voluntario: '+str(self.voluntario))
 
 class Contacto(models.Model):
 	id = models.IntegerField(primary_key= True, editable= False)
