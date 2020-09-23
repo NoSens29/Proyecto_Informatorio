@@ -1,0 +1,24 @@
+{% extends "voluntariado/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<form class="form" method="POST">
+    {% csrf_token %}
+     
+
+    <i id="icono" class="far fa-user fa-4x"></i><h4 id="h2">Iniciar sesión</h4><hr id="hr"><br>
+ 
+    <div class="form-group">
+    {{form.as_p}}
+    
+   	 
+ 	 </div>
+  <button id="button1" type="button" class="btn btn-primary">Login</button><br><br>
+    <a href="{% url 'registro_person' %}"> Todavia no tiene cuenta? Presione aqui!</a></button>
+
+<hr>
+</form>
+{% endblock %}

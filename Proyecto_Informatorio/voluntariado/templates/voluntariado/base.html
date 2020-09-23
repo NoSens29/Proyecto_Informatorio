@@ -1,5 +1,5 @@
 <html>
-
+<title>Home</title>>
 <head>
 
 
@@ -11,22 +11,31 @@
     
      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
      <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
-     
+     <!-- Include Font Awesome Stylesheet in Header -->
+     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+     <script src="https://kit.fontawesome.com/7de45a44fc.js" crossorigin="anonymous"></script>
+     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <!-- // -->
 
     <!-- Styles -->
     <link href="{% static 'voluntariado/css/gestion.css' %}" rel="stylesheet">
+
 </head>
 
 <body>
     <div class="container">
 
-      <div class="item" id="item1"><img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'voluntariado/img/principal.jpeg' %}" alt=""></div>
+      <div class="item" id="item1"><img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'voluntariado/img/principal.png' %}" alt style="filter: drop-shadow(0 0 0.75rem grey);"></div>
 
-      <div class="item" id="item2"><h1 class="site-heading text-center text-white d-none d-lg-block">
+      <div class="item" id="item2">
+        <h1 class="site-heading text-center text-white d-none d-lg-block">
         
-        <span class="site-heading-lower">Voluntarios En Accion</span>
-      </h1> </div>
+          <span class="site-heading-lower">Voluntarios En Accion</span>
+        
+        </h1>
       </div>
+    </div>
 
     
 
@@ -44,26 +53,28 @@
       
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item active px-lg-4">
+
+          <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Inicio</a>
-          </li>
-          <li class="nav-item active px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'login' %}">Login</a>
+          </li>    
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Historial' %}">Historias de favores</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'registro'%}">Registro</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">Contacto</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Historial'%}">Historias de favores</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'donaciones' %}">Donaciones</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'donaciones'%}">Contacto</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'registro_person' %}">Registro</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'donaciones'%}">Donaciones</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'login2' %}">Login</a>
           </li>
          
         </ul>
+        
       </div>
     </div>
   </nav>
@@ -81,34 +92,47 @@
       <!-- Footer -->
     <footer class="footer text-faded text-center py-5">
       <div class="container">
-        <p class="m-0">
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	    </p>
-        <p class="m-0 mbt">
-        	<a href="sample.html" class="link">Política de privacidad</a> ·
-        	<a href="sample.html" class="link">Aviso legal</a> ·
-        	<a href="sample.html" class="link">Cookies</a>
-		</p>
-        <p class="m-0 mbt1">&copy; Voluntarios En Accion 2020</p>
+        <hr>
+          <p class="m-0">
 
+  	        <a href="#" class="link">
+  	          <span class="fa-stack fa-lg">
+  	            <i class="fa fa-circle fa-stack-2x"></i>
+  	            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+  	          </span>
+  	        </a>
+
+  	        <a href="#" class="link">
+  	          <span class="fa-stack fa-lg">
+  	            <i class="fa fa-circle fa-stack-2x"></i>
+  	            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+  	          </span>
+  	        </a>
+
+  	        <a href="#" class="link">
+  	          <span class="fa-stack fa-lg">
+  	            <i class="fa fa-circle fa-stack-2x"></i>
+  	            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+  	          </span>
+  	        </a>
+  	      </p>
+
+          <p class="m-0 mbt">
+          	<a href="sample.html" class="link">Política de privacidad</a> ·
+          	<a href="sample.html" class="link">Aviso legal</a> ·
+          	<a href="sample.html" class="link">Cookies</a>
+  		    </p>
+
+          <p class="m-0 mbt1">&copy; Voluntarios En Accion 2020</p>
+        <hr>
       </div>
+    
+    
+
+    
+  <br />
+
+
 	</footer>
 
     <!-- Bootstrap -->
