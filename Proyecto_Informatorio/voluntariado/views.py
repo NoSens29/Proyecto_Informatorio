@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 
 from django.template import loader
 
-from .models import Actividad,  Contacto, Person
+from .models import Actividad, Contacto, Person
 
 from .forms import  ActividadForm
 

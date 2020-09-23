@@ -49,11 +49,13 @@ class Person(models.Model):
 
 		return (self.user.username + ' solicitante: '+str(self.solicitante) + ', voluntario: '+str(self.voluntario))
 
+
 class Contacto(models.Model):
 	id = models.IntegerField(primary_key= True, editable= False)
 	tu_nombre = models.CharField(max_length=60)
 	tu_direccion_de_correo = models.EmailField()
 	tu_mensaje = models.TextField(max_length=200)
+
     
 	def __str__(self):
 		
