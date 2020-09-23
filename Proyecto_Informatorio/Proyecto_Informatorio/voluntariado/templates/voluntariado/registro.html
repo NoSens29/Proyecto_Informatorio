@@ -1,3 +1,5 @@
+<title>Registro</title>
+
 {% extends "voluntariado/base.html" %}
 
 {% load static %}
@@ -5,27 +7,98 @@
 
 {% block content %}
 
-<form method="POST">
+<form class="formulario" method="POST">
 	{% csrf_token %}
-	<label>Nombre</label><input type="" name="name"><br>
-	<label>Apellido</label><input type="" name="surname"><br>
-	<label>Usuario</label><input type="" name="username"><br>
-	<label>DNI</label><input type="" name="dni"><br>
-	<label>Teléfono</label><input type="" name="phone"><br>
-	<label>Mail</label><input type="" name="email"><br>
-	<label>Dirección</label><input type="" name="adress"><br>
-    <label>Contraseña</label><input type="password" name="password">
-    <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="True">
-    <label class="form-check-label" for="inlineCheckbox1">voluntario</label>
+
+	<i id="icono2" class="fas fa-clipboard-list fa-3x"></i> <br><span id="span">Formulario de Registro</span><hr><br><br>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label class="label">NOMBRE COMPLETO</label>
+      <input id="input" type="email" class="form-control">
     </div>
-    <div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" value="True">
-    <label class="form-check-label" for="inlineCheckbox2">Solicitante</label>
+    <div class="form-group col-md-6">
+      <label class="label">APELLIDOS</label>
+      <input id="input" type="" class="form-control">
     </div>
-	<input type="hidden" name="admin" value="False"><br>
-	<input type="hidden" name="voluntary" value="True"><br>
-	<input type="hidden" name="solicitant" value="False"><br>
-	<button type="submitt">Registrarse</button>
+  </div>
+  <div class="form-group">
+    <label class="label">DNI</label>
+    <input id="input" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label class="label">DOMICILIO</label>
+    <input id="input" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label class="label">TELEFONO</label>
+    <input id="input" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label class="label">EMAIL</label>
+    <input id="input" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label class="label">CONTRASEÑA</label>
+    <input id="input" type="password" class="form-control">
+  </div>
+ <br>
+  <div class="form-check">
+  		<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  			<label id="cl" class="form-check-label" for="exampleRadios1">
+    		VOLUNTARIO
+  			</label>
+   	</div><div class="form-check">
+ 		 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+  		<label id="cl" class="form-check-label" for="exampleRadios2">
+   			SOLICITANTE
+  		</label>
+	</div>
+  <button id="button2" type="submit" class="btn btn-primary">Registrarse</button>
+  <hr>
 </form>
+<!--  
+<form method="POST">
+
+	{% csrf_token %}
+
+	<table>
+		<tr colspan="2">
+			<td><label>Nombre</label></td><td><input type="" name="name"></td>
+		</tr>
+		<tr>
+			<td><label>Apellido</label></td><td><input type="" name="surname"></td>
+		</tr>
+		<tr>
+			<td><label>Usuario</label></td><td><input type="" name="username"></td>
+		</tr>
+		<tr>
+			<td><label>DNI</label></td><td><input type="" name="dni"></td>
+		</tr>
+		<tr>
+			<td><label>Teléfono</label></td><td><input type="" name="phone"></td>
+		</tr>
+		<tr>
+			<td><label>Mail</label></td><td><input type="" name="email"></td>
+		</tr>
+		<tr>
+			<td><label>Dirección</label></td><td><input type="" name="adress"></td>
+		</tr>
+		<tr>
+			<td><label>Contraseña</label></td><td><input type="password" name="password"></td>
+		</tr>
+		<tr>
+			<td><div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="inlineCheckbox1" name = "voluntario" value="True">
+				<label class="form-check-label" for="inlineCheckbox1">voluntario</label></div></td>
+			<td><div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" name = "solicitant" value="True">
+			    <label class="form-check-label" for="inlineCheckbox2">Solicitante</label></div></td>
+		</tr>
+		<tr>
+			<td><button type="submitt">Registrarse</button></td>
+		</tr>
+	</table>
+
+
+
+</form>
+-->
 {% endblock %}
