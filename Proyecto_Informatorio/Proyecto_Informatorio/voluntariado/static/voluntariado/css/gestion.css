@@ -6,7 +6,6 @@ body {
   background-size: cover;
 }
 
-
 h1,
 h2,
 h3,
@@ -20,6 +19,9 @@ p {
   line-height: 1.75;
 }
 
+.text-faded {
+  color: rgba(255, 255, 255, 0.3);
+}
 
 .site-heading {
   margin-top: 5rem;
@@ -132,7 +134,7 @@ p {
     left: 600;
     width: 60%;
     margin-top: 3rem;
-    background-color: rgba(247 9 6);
+    background-color: rgba(246, 171, 108);
     color: rgba(255,255,255,255);
     position: absolute;
   }
@@ -147,7 +149,6 @@ p {
 @media (min-width: 1200px) {
   .intro .intro-text {
     width: 45%;
-    box-shadow: 20px 40px 48px -39px #212529;
   }
 }
 
@@ -227,7 +228,7 @@ p {
 }
 
 .footer {
-   background-color: rgba(244, 77, 77, 0.9);
+   background-color: rgb(235, 88, 89);
 }
 
 
@@ -286,11 +287,11 @@ ul.errorlist{
   padding: 1em;
 
 }
-
-#item1 {
+#item1{
   float: left;
   width:20em;
   height:20em;
+  border-radius: 100px;
 }
 
 #item2{
@@ -301,89 +302,5 @@ ul.errorlist{
 #empleado{
   width:30em;
   height:40em;
-  box-shadow: 17px 10px 29px -1px rgb(66 65 66 / 77%);
 }
-.form{
-  margin: auto;
-  padding: 40px;
-  font-family: 'Quicksand', sans-serif;
-  text-align: center;
-  color:white;
-  background-color: black;
-  max-width: 400px;
-  margin-top: 100px;
-  border-radius: 15px;
-  opacity: 0.9;
-  margin-bottom: 70px;
-  bottom: 5px;
-  box-shadow: 0 0 4px #FF0000;
-}
-.formulario{
-margin: auto;
-padding: 40px;
-font-family: 'Quicksand', sans-serif;
-background-color: black;
-opacity: 0.9;
-max-width: 550px;
-color: white;
-border-radius: 15px;
-font-size: 15px;
-margin-bottom: 20px;
-box-shadow: 0 0 4px #FF0000; 
-}
-#h2{
-  text-align: center;
-  font-family: 'Quicksand', sans-serif;
-  color: white;
 
-}
-#icono{
-color: white;
-}
-.form .input{
-  width: 100%;
-  height: 5%;
-  border: 2px solid red;
-  border-radius: 25px;
-  margin-top: 25px;
-  background-color: #D5D1D1;
-  
-}
-#button1{
-  margin-top: 20px;
-  margin-right: 10px;
-  width: 60%;
-  border-radius: 25px;
-}
-.form .label{
-  position: absolute;
-}
-#a{
-  font-size: 10px;
-}
-#icono2{
-  margin: auto;
-  margin-left: 210px;
-  margin-bottom: 10px;
-  align-content: center;
-}
-#span{
-  text-align: center;
-  margin-left: 145px;
-}
-#input{
-  border: 2px solid red;
-  border-radius: 25px;
-  margin-top: 15px;
-  background-color: #D5D1D1;
-}
-#button2{
-  margin-left: 100px;
-  margin-top: 40px;
-  width: 60%;
-  border-radius: 25px;
-}
-#cl{
-  margin-left: 20px;
-  position: relative;
-}
